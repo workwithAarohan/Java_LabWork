@@ -6,37 +6,63 @@ import java.io.InputStreamReader;
 
 class Calculation
 {
-    int firstNum, secondNum;
+    public static int firstNum, secondNum;
 
-    Calculation(int num1, int num2)
+
+    // int firstNum, secondNum;
+
+    // Calculation(int num1, int num2)
+    // {
+    //     firstNum = num1;
+    //     secondNum = num2;
+    // }
+
+    public static void input() throws NumberFormatException, IOException
     {
-        firstNum = num1;
-        secondNum = num2;
+        BufferedReader inp = new BufferedReader(
+            new InputStreamReader(System.in));
+
+        System.out.print("Enter First number: ");
+        firstNum = Integer.parseInt(inp.readLine());
+
+        System.out.print("Enter Second number: ");
+        secondNum = Integer.parseInt(inp.readLine());
     }
 
-    public void Addition() 
+    public void Addition() throws NumberFormatException, IOException
     {
+        System.out.println("**** Addition Operation ****");
+        input();
+
         int add = firstNum + secondNum;
         System.out.println(
             firstNum + " + " + secondNum + " = " + add);    
     }
 
-    public void Subtraction() 
+    public void Subtraction() throws NumberFormatException, IOException 
     {
+        System.out.println("**** Subtraction Operation ****");
+        input();
+        
         int sub = firstNum - secondNum;
         System.out.println(
             firstNum + " - " + secondNum + " = " + sub);   
     }
 
-    public void Multiplication() 
+    public void Multiplication() throws NumberFormatException, IOException 
     {
+        System.out.println("**** Multiplication Operation ****");
+        input();
+
         int mul = firstNum * secondNum;
         System.out.println(
             firstNum + " * " + secondNum + " = " + mul);    
     }
 
-    public void Division() 
+    public void Division() throws NumberFormatException, IOException 
     {
+        System.out.println("**** Division Operation ****");
+        input();
         try 
         {
             System.out.println(
@@ -54,18 +80,8 @@ public class ReadInput
 {
     public static void main(String[] args) throws IOException 
     {
-        BufferedReader inp = new BufferedReader(
-            new InputStreamReader(System.in));
-
-        System.out.print("Enter First number: ");
-        int num1 = Integer.parseInt(inp.readLine());
-
-        System.out.print("Enter Second number: ");
-        int num2 = Integer.parseInt(inp.readLine());
-
         // Creating object for Calculation class
-        Calculation obj = new Calculation(num1,num2);
-
+        Calculation obj = new Calculation();
 
         obj.Addition();
         obj.Subtraction();

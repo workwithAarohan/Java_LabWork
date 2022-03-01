@@ -43,16 +43,24 @@ public class Java_Connectivity
         
         switch (choice)
         {
-            case "1" -> READ();
+            case "1":
+                READ();
+                break;
 
-            case "2" -> CREATE(sc);
+            case "2":
+                CREATE(sc);
+                READ();
+                break;
 
-            case "3" -> UPDATE(sc);
+            case "3":
+                UPDATE(sc);
+                READ();
+                break;
 
-            case "4" -> DELETE(sc);
-
-            default -> {
-            }
+            case "4":
+                DELETE(sc);
+                READ();
+                break;
         }
     }
     
@@ -83,10 +91,10 @@ public class Java_Connectivity
     {
         try
         {
-            System.out.println("Enter Name: ");
+            System.out.print("Enter Name: ");
             String name = sc.nextLine();
 
-            System.out.println("Enter address: ");
+            System.out.print("Enter address: ");
             String address = sc.nextLine();
             
             String query = "INSERT INTO users (name,address)" 
